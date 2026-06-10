@@ -27,7 +27,7 @@ The paper “Optimal Control for Scheduling and Pricing Intra-day Natural Gas Tr
 - Time-dependent injections/withdrawals
 - Economic valuation of gas at each node
 
-This supports your project’s:
+This supports the project’s:
 - Optimization engine for procurement & scheduling
 - Pipeline-aware imbalance management
 - Locational gas value estimation

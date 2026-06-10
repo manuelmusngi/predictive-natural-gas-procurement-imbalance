@@ -16,19 +16,20 @@ The system would help natural gas trading in:
 
 🔬 Research Foundations (Cited)
 1. Pipeline Scheduling & External Drivers
-The MDPI paper “An Analytical Study on the Correlations Between Natural Gas Pipeline Network Scheduling Decisions and External Environmental Factors” shows that
-temperature, supply, and energy consumption strongly influence pipeline scheduling decisions.
-
 
 [An Analytical Study on the Correlations Between Natural Gas Pipeline Network Scheduling Decisions and External Environmental Factors](https://www.mdpi.com/1996-1073/18/13/3274?utm_source=copilot.com)
 
-
+The MDPI paper “An Analytical Study on the Correlations Between Natural Gas Pipeline Network Scheduling Decisions and External Environmental Factors” shows that
+temperature, supply, and energy consumption strongly influence pipeline scheduling decisions.
 This supports the project’s inclusion of:
 - Weather-driven demand forecasting
 - Correlation analysis between power load and gas nominations
 - Predictive imbalance alerts
 
 2. Optimal Control for Gas Scheduling
+
+[Optimal Control for Scheduling and Pricing Intra-day Natural Gas Transport on Pipeline Networks](https://arxiv.org/abs/1912.02895?utm_source=copilot.com)
+
 The paper “Optimal Control for Scheduling and Pricing Intra-day Natural Gas Transport on Pipeline Networks” (Zlotnik et al.) provides a mathematical and optimization-based framework for:
 - Gas flow scheduling
 - Compressor constraints

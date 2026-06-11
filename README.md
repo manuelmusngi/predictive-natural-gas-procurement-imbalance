@@ -57,3 +57,53 @@ The ResearchGate paper on “Production and marketing scheduling of natural gas�
 - Allocation optimization
 - Scenario-based procurement strategies
 - Multi-node scheduling logic
+
+🏗️ Project Architecture
+
+gas_ops_rnd/
+├─ pyproject.toml / requirements.txt
+├─ README.md
+├─ data/
+│  ├─ raw/
+│  ├─ interim/
+│  └─ processed/
+├─ configs/
+│  ├─ forecasting.yaml
+│  └─ imbalance.yaml
+├─ notebooks/
+│  ├─ 01_eda_forecasting.ipynb
+│  ├─ 02_model_benchmarking.ipynb
+│  └─ 03_imbalance_exploration.ipynb
+├─ gas_ops/
+│  ├─ __init__.py
+│  ├─ io/
+│  │  ├─ loaders.py
+│  │  └─ pipelines.py
+│  ├─ features/
+│  │  ├─ weather_features.py
+│  │  ├─ power_features.py
+│  │  └─ gas_features.py
+│  ├─ models/
+│  │  ├─ arimax.py
+│  │  ├─ gradient_boosting.py
+│  │  ├─ lstm_seq2seq.py
+│  │  └─ ensemble_forecaster.py
+│  ├─ forecasting/
+│  │  ├─ dataset.py
+│  │  ├─ train.py
+│  │  └─ evaluate.py
+│  ├─ imbalance/
+│  │  ├─ dataset.py
+│  │  ├─ risk_model.py
+│  │  ├─ rules_engine.py
+│  │  └─ alerts.py
+│  └─ utils/
+│     ├─ metrics.py
+│     └─ logging.py
+└─ scripts/
+   ├─ run_forecasting_train.py
+   ├─ run_forecasting_infer.py
+   └─ run_imbalance_monitor.py
+
+#### License
+This project is licensed under the [MIT License](LICENSE).  

@@ -1,12 +1,8 @@
 #### A Predictive Gas Procurement & Imbalance Management Decision-Support System for Gas-Fired Power Generation
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
-![Build](https://img.shields.io/badge/Build-Passing-brightgreen.svg)
 ![Models](https://img.shields.io/badge/Models-ARIMAX%20|%20GBM%20|%20LSTM-orange.svg)
 ![Pipeline](https://img.shields.io/badge/Pipeline-Operational%20Ready-purple.svg)
-![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)
 ![Research](https://img.shields.io/badge/Backed%20By-Peer--Reviewed%20Research-teal.svg)
-
 
 🎯 Project Overview
 

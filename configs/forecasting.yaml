@@ -1,0 +1,73 @@
+data:
+  panel_path: data/processed/generator_panel.parquet
+  timestamp_col: timestamp
+  group_col: generator_id
+
+features:
+  feature_cols:
+    - da_power_mw
+    - rt_power_mw
+    - heat_rate_mmbtu_per_mwh
+    - temp_f
+    - hdd
+    - cdd
+    - hour
+    - day_of_week
+    - month
+    - gas_burn_mmbtu_lag_1
+    - gas_burn_mmbtu_lag_24
+  target_col: gas_burn_mmbtu
+
+split:
+  test_size: 0.20
+  val_size: 0.10
+
+models:
+
+  arimax:
+    enabled: true
+    order: [1, 0, 1]
+    seasonal_order: [0, 0, 0, 0]
+
+  gbm:
+    enabled: true
+    params:
+      n_estimators: 800
+      learning_rate: 0.03
+      num_leaves: 64
+      subsample: 0.80
+      colsample_bytree: 0.80
+      random_state: 7
+
+  lstm:
+    enabled: true
+    seq_len: 24
+    hidden_dim: 96
+    num_layers: 2
+    dropout: 0.0
+    train:
+      epochs: 15
+      batch_size: 128
+      lr: 0.001
+      device: auto   # auto = cuda if available else cpu
+
+ensemble:
+  enabled: true
+  weights: [0.2, 0.4, 0.4]   # arimax, gbm, lstm
+
+backtest:
+  enabled: true
+  window_size: 336        # 14 days of hourly data
+  step_size: 24           # roll forward 1 day
+  horizon: 24             # 24-hour ahead forecast path
+  regime_analysis:
+    enabled: true
+    da_rt_spread: true
+    quantile_tail: 0.90   # tail error threshold
+
+artifacts:
+  dir: artifacts/forecasting
+  gbm_path: artifacts/forecasting/gbm.joblib
+  arimax_path: artifacts/forecasting/arimax.pkl
+  lstm_path: artifacts/forecasting/lstm.pt
+  meta_path: artifacts/forecasting/meta.yaml

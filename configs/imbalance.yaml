@@ -1,0 +1,37 @@
+data:
+  snapshot_path: data/processed/imbalance_snapshot.parquet
+  timestamp_col: timestamp
+  group_col: pipeline_id
+
+features:
+  feature_cols:
+    - scheduled_receipts_mmbtu
+    - scheduled_deliveries_mmbtu
+    - actual_flows_mmbtu
+    - linepack_mmbtu
+    - temp_f
+    - hdd
+    - cdd
+    - rt_power_mw
+    - da_power_mw
+    - constraint_flag
+  target_col: risk_class
+
+model:
+  type: lightgbm_classifier
+  params:
+    n_estimators: 500
+    learning_rate: 0.05
+    num_leaves: 63
+    subsample: 0.80
+    colsample_bytree: 0.80
+    random_state: 7
+
+rules:
+  high_risk_threshold: 0.70
+  medium_risk_threshold: 0.40
+  high_class_index: 2
+
+artifacts:
+  dir: artifacts/imbalance
+  model_path: artifacts/imbalance/risk_model.joblib

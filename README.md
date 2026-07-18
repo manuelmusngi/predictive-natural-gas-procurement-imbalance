@@ -1,4 +1,4 @@
-#### A Predictive Gas Procurement & Imbalance Management Decision-Support System for Gas-Fired Power Generation
+#### Natural Gas Procurement & Imbalance Management Decision-Support System for Gas-Fired Power Generation
 
 ![Models](https://img.shields.io/badge/Models-ARIMAX%20|%20GBM%20|%20LSTM-orange.svg)
 ![Pipeline](https://img.shields.io/badge/Pipeline-Operational%20Ready-purple.svg)

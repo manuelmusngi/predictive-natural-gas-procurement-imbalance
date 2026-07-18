@@ -45,15 +45,6 @@ This supports the project’s:
 - Pipeline-aware imbalance management
 - Locational gas value estimation
 
-3. Production & Marketing Scheduling
-
-- [Production and marketing scheduling of natural gas based on table-manipulation method and Lingo software](https://www.researchgate.net/publication/356428191_Production_and_marketing_scheduling_of_natural_gas_based_on_table-manipulation_method_and_Lingo_software)
-
-The ResearchGate paper on “Production and marketing scheduling of natural gas…” demonstrates structured approaches to allocating gas supply across multiple destinations. This supports:
-- Allocation optimization
-- Scenario-based procurement strategies
-- Multi-node scheduling logic
-
 🏗️ Project Architecture
 
 gas_ops_rnd/\
